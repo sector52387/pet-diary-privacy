@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inuha production - ペットアプリ開発者</title>
+    <meta name="description" content="inuha productionは、ペットオーナーのための便利なアプリを開発しています。わんにゃん日記など。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #FFF0F5 0%, #EEF9FF 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+        
+        .logo {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #FF6B9D;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #87CEEB;
+            margin-bottom: 30px;
+        }
+        
+        .description {
+            font-size: 1em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Apps Section */
+        .apps-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #FF6B9D;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .app-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #FF6B9D, #87CEEB);
+        }
+        
+        .app-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .app-name {
+            font-size: 1.8em;
+            color: #FF6B9D;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .app-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .app-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .app-features li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .app-features li::before {
+            content: "✓ ";
+            color: #87CEEB;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .app-status {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #FFE0EB;
+            color: #FF6B9D;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .app-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B9D, #FF85A8);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF5A8C, #FF6B9D);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #87CEEB;
+            border: 2px solid #87CEEB;
+        }
+        
+        .btn-secondary:hover {
+            background: #87CEEB;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Legal Links */
+        .legal-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .legal-title {
+            font-size: 1.5em;
+            color: #FF6B9D;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #F8F8F8;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #555;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .legal-link:hover {
+            background: #FF6B9D;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .legal-link::before {
+            font-size: 1.5em;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-title {
+            font-size: 1.8em;
+            color: #87CEEB;
+            margin-bottom: 20px;
+        }
+        
+        .contact-email {
+            font-size: 1.2em;
+            color: #FF6B9D;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #FFF5F8;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        
+        .contact-email:hover {
+            background: #FF6B9D;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: #87CEEB;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #FF6B9D;
+        }
+        
+        /* Coming Soon */
+        .coming-soon-card {
+            background: linear-gradient(135deg, #F0F0F0, #E8E8E8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon-card::before {
+            background: linear-gradient(90deg, #CCC, #AAA);
+        }
+        
+        .coming-soon-badge {
+            background: #E0E0E0;
+            color: #888;
+        }
+        
+        /* Language Toggle */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid #87CEEB;
+            background: white;
+            color: #87CEEB;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #87CEEB;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-toggle {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('ja')">日本語</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🐾</div>
+            <h1 data-ja="inuha production" data-en="inuha production">inuha production</h1>
+            <p class="tagline" data-ja="ペットとの毎日をもっと楽しく" data-en="Making everyday life with pets more enjoyable">ペットとの毎日をもっと楽しく</p>
+            <p class="description" data-ja="ペットオーナーのための便利で使いやすいアプリを開発しています。" data-en="We develop convenient and user-friendly apps for pet owners.">
+                ペットオーナーのための便利で使いやすいアプリを開発しています。
+            </p>
+        </div>
+        
+        <!-- Apps Section -->
+        <div class="apps-section">
+            <h2 class="section-title" data-ja="🐶 アプリ 🐱" data-en="🐶 Apps 🐱">🐶 アプリ 🐱</h2>
+            
+            <div class="apps-grid">
+                <!-- わんにゃん日記 -->
+                <div class="app-card">
+                    <span class="app-icon">📔</span>
+                    <div class="app-status" data-ja="リリース準備中" data-en="Coming Soon">リリース準備中</div>
+                    <h3 class="app-name" data-ja="わんにゃん日記" data-en="Pet Diary">わんにゃん日記</h3>
+                    <p class="app-name" style="font-size: 0.9em; color: #87CEEB; margin-top: -10px;">Pet Diary</p>
+                    <p class="app-description" data-ja="愛犬・愛猫の思い出を記録する日記アプリ。写真、動画、食事、健康記録をかんたんに管理できます。" data-en="A diary app to record memories of your beloved dogs and cats. Easily manage photos, videos, meals, and health records.">
+                        愛犬・愛猫の思い出を記録する日記アプリ。写真、動画、食事、健康記録をかんたんに管理できます。
+                    </p>
+                    <ul class="app-features">
+                        <li data-ja="写真・動画で思い出を保存" data-en="Save memories with photos and videos">写真・動画で思い出を保存</li>
+                        <li data-ja="食事・排便記録で健康管理" data-en="Health management with meal and toilet records">食事・排便記録で健康管理</li>
+                        <li data-ja="複数のペットを登録可能" data-en="Register multiple pets">複数のペットを登録可能</li>
+                        <li data-ja="5言語対応（日英西葡独）" data-en="5 languages supported (JA/EN/ES/PT/DE)">5言語対応（日英西葡独）</li>
+                    </ul>
+                    <div class="app-links">
+                        <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">
+                            <span data-ja="📱 Google Play（準備中）" data-en="📱 Google Play (Coming Soon)">📱 Google Play（準備中）</span>
+                        </a>
+                        <a href="privacy.html" class="btn btn-secondary">
+                            <span data-ja="📄 プライバシーポリシー" data-en="📄 Privacy Policy">📄 プライバシーポリシー</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Coming Soon App -->
+                <div class="app-card coming-soon-card">
+                    <span class="app-icon">🎁</span>
+                    <div class="coming-soon-badge" data-ja="企画中" data-en="In Planning">企画中</div>
+                    <h3 class="app-name" style="color: #888;" data-ja="次のアプリ" data-en="Next App">次のアプリ</h3>
+                    <p class="app-description" data-ja="新しいペット向けアプリを企画中です。お楽しみに！" data-en="We are planning a new pet app. Stay tuned!">
+                        新しいペット向けアプリを企画中です。お楽しみに！
+                    </p>
+                    <ul class="app-features">
+                        <li data-ja="ユーザーの声を反映" data-en="Based on user feedback">ユーザーの声を反映</li>
+                        <li data-ja="さらに便利な機能" data-en="Even more convenient features">さらに便利な機能</li>
+                        <li data-ja="続報をお待ちください" data-en="More info coming soon">続報をお待ちください</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Section -->
+        <div class="legal-section">
+            <h3 class="legal-title" data-ja="📜 法的情報" data-en="📜 Legal Information">📜 法的情報</h3>
+            <div class="legal-links">
+                <a href="privacy.html" class="legal-link">
+                    <span>🔒</span>
+                    <span data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</span>
+                </a>
+                <a href="terms.html" class="legal-link">
+                    <span>📋</span>
+                    <span data-ja="利用規約" data-en="Terms of Service">利用規約</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3 class="contact-title" data-ja="💌 お問い合わせ" data-en="💌 Contact">💌 お問い合わせ</h3>
+            <a href="mailto:inuha.production.05@gmail.com" class="contact-email">
+                <span>✉️</span>
+                <span>inuha.production.05@gmail.com</span>
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</a>
+                <span style="color: #DDD;">|</span>
+                <a href="terms.html" class="footer-link" data-ja="利用規約" data-en="Terms of Service">利用規約</a>
+            </div>
+            <p>© 2026 inuha production. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.8em; color: #BBB;">
+                Made with <span style="color: #FF6B9D;">❤️</span> for pet lovers
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        let currentLang = 'ja';
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

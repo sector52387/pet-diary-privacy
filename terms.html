@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用規約 - わんにゃん日記 / Terms of Service - Pet Diary</title>
+    <title>利用規約 - わんにゃん日記</title>
     <style>
         * {
             margin: 0;
@@ -402,17 +402,12 @@
     
     <script>
         function showLanguage(lang) {
-            // Hide all content
             document.querySelectorAll('.content').forEach(el => {
                 el.classList.remove('active');
             });
-            
-            // Remove active class from all buttons
             document.querySelectorAll('.language-toggle button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
-            // Show selected content
             document.getElementById('content-' + lang).classList.add('active');
             document.getElementById('btn-' + lang).classList.add('active');
         }
