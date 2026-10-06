@@ -167,7 +167,7 @@
     <div class="container">
         <div class="header">
             <h1>🐾 プライバシーポリシー / Privacy Policy</h1>
-            <p class="last-updated">最終更新日 / Last Updated: 2026年2月15日 / February 15, 2026</p>
+            <p class="last-updated">最終更新日 / Last Updated: 2026年10月6日 / October 6, 2026</p>
         </div>
         
         <div class="language-toggle">
@@ -184,26 +184,27 @@
             
             <div class="section">
                 <h3>1. 収集する情報</h3>
-                <p>本アプリは以下の情報を収集します：</p>
+                <p>本アプリは以下の情報を取り扱います：</p>
                 
                 <h4>ユーザーが入力する情報</h4>
                 <ul>
                     <li>ペットの情報（名前、種類、誕生日）</li>
                     <li>ペットの写真</li>
-                    <li>日記の内容（テキスト、写真）</li>
+                    <li>日記の内容（テキスト、写真、動画）</li>
                     <li>食事・排便の記録</li>
                 </ul>
                 
-                <h4>自動的に収集される情報</h4>
+                <h4>外部サービスが取得する情報</h4>
                 <ul>
-                    <li>広告表示のための匿名データ（Google AdMobによる）
-                        <ul>
-                            <li>デバイス情報（機種、OS バージョン）</li>
-                            <li>広告識別子（広告ID）</li>
-                            <li>IPアドレス</li>
-                            <li>広告の表示・クリックに関する情報</li>
-                        </ul>
-                    </li>
+                    <li>Google AdMob（広告配信）：広告IDやアプリセットID等の識別子、IPアドレス（おおよその位置の推定に使われる場合があります）、広告の表示・クリック等の操作情報、端末・アプリの診断情報</li>
+                    <li>Google Analytics for Firebase（利用分析）：アプリのインスタンスID、広告ID、端末・アプリの情報、初回起動・画面表示・セッション・利用状況・広告表示等のイベント、IPアドレスから推定されるおおよその位置情報</li>
+                    <li>Firebase Crashlytics（不具合調査）：クラッシュやエラーの情報、スタックトレース、発生時のアプリの状態・端末情報、インストール単位の識別子等の診断情報</li>
+                </ul>
+                <p>取得される情報は、サービスの仕様、端末の設定、同意の状態等によって異なります。</p>
+                
+                <h4>購入に関する情報</h4>
+                <ul>
+                    <li>有料機能の商品情報の照会、購入、購入の復元のためにGoogle Playと通信し、商品識別子や購入状態等の情報を取り扱います</li>
                 </ul>
             </div>
             
@@ -214,29 +215,33 @@
                 <ul>
                     <li>アプリの機能提供（日記の記録・表示）</li>
                     <li>データの保存と管理</li>
+                    <li>ユーザーが選択した共有・書き出し</li>
                 </ul>
                 
-                <h4>広告関連情報</h4>
+                <h4>広告・分析・診断・購入に関する情報</h4>
                 <ul>
-                    <li>広告の表示と配信</li>
-                    <li>広告の効果測定</li>
-                    <li>アプリの運営・改善</li>
+                    <li>広告の表示・配信・効果測定および不正利用の防止</li>
+                    <li>アプリの利用状況の分析と機能・品質の改善</li>
+                    <li>クラッシュやエラーの調査と修正</li>
+                    <li>有料機能の商品情報の表示、購入処理、購入状態の確認と復元</li>
                 </ul>
             </div>
             
             <div class="section">
                 <h3>3. データの保存場所</h3>
                 
-                <h4>ローカルストレージ</h4>
+                <h4>ローカルストレージと共有・書き出し</h4>
                 <ul>
-                    <li>ユーザーが入力したすべてのデータ（ペット情報、日記、写真等）は、お使いの端末内にのみ保存されます</li>
-                    <li>外部サーバーには一切送信されません</li>
-                    <li>データはアプリをアンインストールすると削除されます</li>
+                    <li>ペット情報、日記、写真、動画等は、主に端末内の本アプリ専用の保存領域に保存されます</li>
+                    <li>ユーザーが共有・書き出しを行う場合、選択したアプリ、保存先、相手にデータが渡ります</li>
+                    <li>広告・利用分析・不具合調査・購入に関する情報は、第1項・第4項の外部サービスへ送信されます</li>
                 </ul>
                 
-                <h4>クラウドストレージ</h4>
+                <h4>クラウド同期とOSのバックアップ</h4>
                 <ul>
-                    <li>本アプリはクラウド同期機能を提供していません</li>
+                    <li>本アプリ独自のクラウド同期機能は提供していません</li>
+                    <li>Androidのバックアップ機能が有効なため、端末・OS・ユーザー設定等の条件により、アプリのデータベース、設定、ファイルがOSのクラウドバックアップや端末間移行の対象になる場合があります</li>
+                    <li>OSのバックアップや復元の範囲・動作は、端末やOSの仕様・設定に従います</li>
                 </ul>
             </div>
             
@@ -244,11 +249,18 @@
                 <h3>4. 第三者へのデータ提供</h3>
                 <p>本アプリは、以下の場合を除き、ユーザーの個人情報を第三者に提供することはありません：</p>
                 
-                <h4>広告配信サービス（Google AdMob）</h4>
+                <h4>Googleの広告・分析・診断・購入サービス</h4>
                 <ul>
-                    <li>広告表示のため、Googleが提供するAdMobを使用しています</li>
-                    <li>AdMobは独自のプライバシーポリシーに基づいて情報を収集・使用します</li>
-                    <li>詳細：<a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                    <li>広告配信にGoogle AdMob、利用分析にGoogle Analytics for Firebase、不具合調査にFirebase Crashlytics、有料機能の購入・復元等にGoogle Playを使用しています</li>
+                    <li>Google AnalyticsとAdMobを連携しており、AnalyticsのデータがAdMobで利用され、AdMobの広告収益データ等がAnalyticsで利用される場合があります。この連携によるデータ利用は、Analyticsの「Googleのプロダクトとサービス」へのデータ共有設定とは別に行われます</li>
+                    <li>各サービスでの情報の取り扱いは、Googleのプライバシーポリシーおよび各サービスの説明に従います</li>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google プライバシーポリシー</a></li>
+                    <li>各サービスの説明：<a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" target="_blank" rel="noopener noreferrer">AdMob</a> / <a href="https://support.google.com/analytics/answer/11582702" target="_blank" rel="noopener noreferrer">Analytics</a> / <a href="https://firebase.google.com/docs/android/play-data-disclosure#crashlytics" target="_blank" rel="noopener noreferrer">Crashlytics</a> / <a href="https://support.google.com/firebase/answer/6387949?hl=ja" target="_blank" rel="noopener noreferrer">AdMobとFirebaseの連携</a></li>
+                </ul>
+                
+                <h4>ユーザーによる共有・OSのバックアップ</h4>
+                <ul>
+                    <li>第3項の共有・書き出しやOSのバックアップ・端末間移行を利用する場合、選択した共有先やバックアップ等の提供者がデータを取り扱います</li>
                 </ul>
                 
                 <h4>法的要請</h4>
@@ -260,8 +272,9 @@
             <div class="section">
                 <h3>5. データのセキュリティ</h3>
                 <ul>
-                    <li>すべてのデータは端末内に暗号化されて保存されます</li>
-                    <li>外部への送信は広告配信時のみ、暗号化された通信で行われます</li>
+                    <li>端末内のデータベース、写真、動画等に、本アプリ独自の暗号化は行っていません。端末・OSによる保護は、その仕様と設定に従います</li>
+                    <li>本アプリから書き出すJSON形式のバックアップファイルは、パスワード等で暗号化されていません。画像・動画等のBase64形式への変換は暗号化ではありません。保存先や共有先の選択にご注意ください</li>
+                    <li>外部通信には、広告配信に加えて利用分析、不具合調査、購入に関する通信が含まれます</li>
                 </ul>
             </div>
             
@@ -270,14 +283,16 @@
                 
                 <h4>データの削除</h4>
                 <ul>
-                    <li>アプリをアンインストールすることで、すべてのデータが削除されます</li>
+                    <li>アプリをアンインストールすると、端末内の本アプリ専用の保存領域のデータは削除されます</li>
+                    <li>共有・書き出し済みのコピー、OSのバックアップ、外部サービス側の記録まで、アンインストールによって削除されることを保証するものではありません。それぞれの保存先・サービスの設定や手順をご確認ください</li>
                     <li>個別の日記やペット情報は、アプリ内から削除できます</li>
                 </ul>
                 
-                <h4>広告のパーソナライズ</h4>
+                <h4>広告の設定と同意</h4>
                 <ul>
-                    <li>端末の設定から広告のパーソナライズをオプトアウトできます</li>
-                    <li>Android: 設定 → Google → 広告 → 広告のパーソナライズをオプトアウト</li>
+                    <li>Androidの設定から広告IDのリセット・削除等を行えます。利用できる項目や操作方法は端末・OSのバージョンによって異なります</li>
+                    <li>広告に関する同意の確認にはGoogleのUser Messaging Platform（UMP）を使用し、広告をリクエストできるかを判断します</li>
+                    <li>広告の同意や広告IDの設定は、Firebase Crashlyticsの収集停止設定とは別です。本アプリでは、広告に関する選択に連動してCrashlyticsの収集を停止する仕組みは設けていません。Analyticsの情報の取り扱いは、サービスの設定や同意状態に応じて異なります</li>
                 </ul>
             </div>
             
@@ -307,26 +322,27 @@
             
             <div class="section">
                 <h3>1. Information We Collect</h3>
-                <p>The App collects the following information:</p>
+                <p>The App handles the following information:</p>
                 
                 <h4>User-Provided Information</h4>
                 <ul>
                     <li>Pet information (name, type, birthday)</li>
                     <li>Pet photos</li>
-                    <li>Diary content (text, photos)</li>
+                    <li>Diary content (text, photos, videos)</li>
                     <li>Meal and toilet records</li>
                 </ul>
                 
-                <h4>Automatically Collected Information</h4>
+                <h4>Information Collected by External Services</h4>
                 <ul>
-                    <li>Anonymous data for ad serving (via Google AdMob)
-                        <ul>
-                            <li>Device information (model, OS version)</li>
-                            <li>Advertising identifier (Ad ID)</li>
-                            <li>IP address</li>
-                            <li>Ad impression and click data</li>
-                        </ul>
-                    </li>
+                    <li>Google AdMob (advertising): identifiers such as the advertising ID and app set ID, IP address (which may be used to estimate general location), interactions such as ad impressions and clicks, and device and app diagnostic information</li>
+                    <li>Google Analytics for Firebase (usage analytics): app-instance ID, advertising ID, device and app information, events such as first opens, screen views, sessions, engagement and ad impressions, and approximate location derived from IP addresses</li>
+                    <li>Firebase Crashlytics (troubleshooting): diagnostic information such as crashes and errors, stack traces, app state and device information at the time of an incident, and per-installation identifiers</li>
+                </ul>
+                <p>The information collected varies depending on service specifications, device settings, consent status and other factors.</p>
+                
+                <h4>Purchase Information</h4>
+                <ul>
+                    <li>The App communicates with Google Play to query paid product information, make purchases and restore purchases, and handles information such as product identifiers and purchase status</li>
                 </ul>
             </div>
             
@@ -337,29 +353,33 @@
                 <ul>
                     <li>To provide app functionality (record and display diary entries)</li>
                     <li>To save and manage data</li>
+                    <li>For sharing and export selected by the user</li>
                 </ul>
                 
-                <h4>Advertising Information</h4>
+                <h4>Advertising, Analytics, Diagnostic and Purchase Information</h4>
                 <ul>
-                    <li>To display and deliver advertisements</li>
-                    <li>To measure ad effectiveness</li>
-                    <li>To operate and improve the app</li>
+                    <li>To display and deliver advertisements, measure their effectiveness and prevent fraud</li>
+                    <li>To analyze app usage and improve features and quality</li>
+                    <li>To investigate and fix crashes and errors</li>
+                    <li>To display paid product information, process purchases, and check and restore purchase status</li>
                 </ul>
             </div>
             
             <div class="section">
                 <h3>3. Data Storage</h3>
                 
-                <h4>Local Storage</h4>
+                <h4>Local Storage, Sharing and Export</h4>
                 <ul>
-                    <li>All user-provided data (pet information, diary entries, photos, etc.) is stored only on your device</li>
-                    <li>No data is transmitted to external servers</li>
-                    <li>Data is deleted when you uninstall the app</li>
+                    <li>Pet information, diary entries, photos, videos and similar content are primarily stored in the App's dedicated storage on your device</li>
+                    <li>When you share or export data, it is passed to the app, storage destination or recipient you select</li>
+                    <li>Advertising, usage analytics, diagnostic and purchase information is transmitted to the external services described in Sections 1 and 4</li>
                 </ul>
                 
-                <h4>Cloud Storage</h4>
+                <h4>Cloud Sync and OS Backups</h4>
                 <ul>
-                    <li>The app does not provide cloud sync functionality</li>
+                    <li>The App does not provide its own cloud sync functionality</li>
+                    <li>Android backup is enabled, so the App's databases, settings and files may be included in OS cloud backups or device-to-device transfers, depending on the device, OS, user settings and other conditions</li>
+                    <li>The scope and operation of OS backup and restoration depend on the device and OS specifications and settings</li>
                 </ul>
             </div>
             
@@ -367,11 +387,18 @@
                 <h3>4. Third-Party Data Sharing</h3>
                 <p>The App does not share personal information with third parties except in the following cases:</p>
                 
-                <h4>Advertising Service (Google AdMob)</h4>
+                <h4>Google Advertising, Analytics, Diagnostic and Purchase Services</h4>
                 <ul>
-                    <li>We use AdMob provided by Google for ad serving</li>
-                    <li>AdMob collects and uses information according to its own privacy policy</li>
-                    <li>Details: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                    <li>We use Google AdMob for advertising, Google Analytics for Firebase for usage analytics, Firebase Crashlytics for troubleshooting, and Google Play for paid purchases, restoration and related functions</li>
+                    <li>Google Analytics and AdMob are linked. Analytics data is available for use in AdMob, and AdMob ad-revenue data and related information may be used in Analytics. Data use through this link operates separately from the Analytics data-sharing setting for "Google products and services"</li>
+                    <li>These services handle information under Google's Privacy Policy and their respective service documentation</li>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                    <li>Service documentation: <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" target="_blank" rel="noopener noreferrer">AdMob</a> / <a href="https://support.google.com/analytics/answer/11582702" target="_blank" rel="noopener noreferrer">Analytics</a> / <a href="https://firebase.google.com/docs/android/play-data-disclosure#crashlytics" target="_blank" rel="noopener noreferrer">Crashlytics</a> / <a href="https://support.google.com/firebase/answer/6387949?hl=en" target="_blank" rel="noopener noreferrer">AdMob and Firebase linking</a></li>
+                </ul>
+                
+                <h4>User Sharing and OS Backups</h4>
+                <ul>
+                    <li>When you use sharing, export, OS backup or device-to-device transfer as described in Section 3, the selected recipients and the relevant backup or transfer providers handle the data</li>
                 </ul>
                 
                 <h4>Legal Requirements</h4>
@@ -383,8 +410,9 @@
             <div class="section">
                 <h3>5. Data Security</h3>
                 <ul>
-                    <li>All data is encrypted and stored on your device</li>
-                    <li>External transmission occurs only for ad serving, using encrypted communication</li>
+                    <li>The App does not apply its own encryption to on-device databases, photos, videos or similar content. Device and OS protections depend on their specifications and settings</li>
+                    <li>JSON backup files exported by the App are not encrypted with a password or similar protection. Converting images, videos or other content to Base64 is not encryption. Please choose storage destinations and recipients carefully</li>
+                    <li>External communication includes usage analytics, troubleshooting and purchases in addition to advertising</li>
                 </ul>
             </div>
             
@@ -393,14 +421,16 @@
                 
                 <h4>Data Deletion</h4>
                 <ul>
-                    <li>All data is deleted when you uninstall the app</li>
+                    <li>Uninstalling the App deletes data in the App's dedicated storage on your device</li>
+                    <li>Uninstalling the App does not guarantee deletion of shared or exported copies, OS backups or records held by external services. Please check the settings and procedures of each storage destination or service</li>
                     <li>Individual diary entries and pet information can be deleted from within the app</li>
                 </ul>
                 
-                <h4>Ad Personalization</h4>
+                <h4>Advertising Settings and Consent</h4>
                 <ul>
-                    <li>You can opt out of personalized ads from your device settings</li>
-                    <li>Android: Settings → Google → Ads → Opt out of Ads Personalization</li>
+                    <li>Android settings provide controls such as resetting or deleting your advertising ID. Available options and steps vary by device and OS version</li>
+                    <li>The App uses Google's User Messaging Platform (UMP) to check advertising consent and determine whether ads can be requested</li>
+                    <li>Advertising consent and advertising ID settings are separate from controls for stopping Firebase Crashlytics collection. The App does not include a mechanism that stops Crashlytics collection in response to advertising choices. Analytics data handling varies depending on service settings and consent status</li>
                 </ul>
             </div>
             
